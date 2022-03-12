@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Livewire\Admin\Users\ListUsers;
+use App\Http\Livewire\MovingAverage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/admin/dashboard', DashboardController::class);
 Route::get('/admin/users', ListUsers::class)->name('admin.users');
+Route::get('/moving-average', MovingAverage::class);

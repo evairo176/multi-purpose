@@ -5,10 +5,6 @@
 <script src="{{asset('backend')}}/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="{{asset('backend')}}/assets/js/app.js"></script>
 <script src="{{asset('backend')}}/plugins/toastr/toastr.js"></script>
-<script src="{{asset('backend')}}/plugins/file-upload/file-upload-with-preview.min.js"></script>
-<script src="{{asset('backend')}}/plugins/sweetalerts/sweetalert2.min.js"></script>
-<script src="{{asset('backend')}}/plugins/sweetalerts/custom-sweetalert.js"></script>
-<script src="{{asset('backend')}}/plugins/font-icons/feather/feather.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -20,7 +16,6 @@
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 <script src="{{asset('backend')}}/assets/js/custom.js"></script>
 <script src="{{asset('backend')}}/assets/js/widgets/modules-widgets.js"></script>
-<script src="{{asset('backend')}}/plugins/toastr/toastr.min.js"></script>
 
 <script>
     $(document).ready(function() {

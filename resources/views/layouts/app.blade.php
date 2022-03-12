@@ -22,7 +22,7 @@
 </head>
 
 <body class="sidebar-noneoverflow">
-
+    @stack('loader')
 
     @Include('includes.navbar')
     <!--  BEGIN MAIN CONTAINER  -->
@@ -46,6 +46,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
 
                         @yield('content')
+
                         {{isset($slot)? $slot : null}}
 
                     </div>
@@ -64,6 +65,7 @@
     <!-- END MAIN CONTAINER -->
 
     @Include('includes.scripts')
+    @stack('scripts')
 </body>
 
 </html>

@@ -11,5 +11,8 @@
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 <link rel="stylesheet" type="text/css" href="{{asset('backend')}}/assets/css/widgets/modules-widgets.css">
+<link href="{{asset('backend')}}/assets/css/scrollspyNav.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{asset('backend')}}/assets/css/forms/theme-checkbox-radio.css">
 <link href="{{asset('backend')}}/assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
 <link href="{{asset('backend')}}/plugins/toastr/toastr.css" rel="stylesheet" type="text/css" />
+<link href="{{asset('backend')}}/plugins/loaders/custom-loader.css" rel="stylesheet" type="text/css" />
