@@ -65,10 +65,13 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
+                        @if($sumUser > $loadMore)
                         <a href="javascript:void(0);" wire:click.prevent="addLoadMore" class="btn btn-secondary">
                             Load More {{ $loadMore }}
                         </a>
+                        @endif
                     </div>
+
                     <div>
                         {{ $users->links() }}
                     </div>

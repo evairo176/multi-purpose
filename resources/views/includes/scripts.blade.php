@@ -17,6 +17,7 @@
 <script src="{{asset('backend')}}/assets/js/custom.js"></script>
 <script src="{{asset('backend')}}/assets/js/widgets/modules-widgets.js"></script>
 
+
 <script>
     $(document).ready(function() {
         toastr.options = {

@@ -15,11 +15,13 @@ class ListUsers extends AdminComponent
     public $user;
     public $userIdBeingRemoved = null;
     public $loadMore = 5;
+    public $sumUser;
 
     public function addLoadMore()
     {
         // dd('da');
-        if (User::count() > $this->loadMore) {
+
+        if ($this->sumUser > $this->loadMore) {
             $this->loadMore *= 2;
         }
         $this->loadMore = 0;
@@ -84,6 +86,7 @@ class ListUsers extends AdminComponent
     public function render()
     {
         $users = User::latest()->paginate($this->loadMore);
+        $this->sumUser = User::count();
         return view('livewire.admin.users.list-users', [
             'users' => $users
         ]);
