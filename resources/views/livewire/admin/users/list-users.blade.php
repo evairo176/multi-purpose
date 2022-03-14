@@ -2,85 +2,83 @@
 
 @endpush
 <div>
-    <div id="tableCheckbox" class="col-lg-12 col-12 layout-spacing">
-        <div class="statbox widget box box-shadow">
-            <div class="widget-heading d-flex justify-content-between align-items-center">
-                <h4>Users</h4>
+    <div class="content-header px-0">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Users</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Users</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div>
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <div class="text-right">
                 <a href="javascript:void(0);" wire:click.prevent="addNew" class="btn btn-primary mb-2" id="addNewdesa" data-toggle="modal" data-target="#modaldesa">Add New User</a>
             </div>
-            <div class="widget-content widget-content-area">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div class="th-content">No</div>
-                                </th>
-                                <th>
-                                    <div class="th-content">Name</div>
-                                </th>
-                                <th>
-                                    <div class="th-content">Email</div>
-                                </th>
-                                <th>
-                                    <div class="th-content">Options</div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($users as $user)
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="usr-img-frame mr-2 rounded-circle">
-                                            <img alt="avatar" class="img-fluid rounded-circle" src="{{ url('backend') }}/assets/img/boy.png">
-                                        </div>
-                                        <p class="align-self-center mb-0">{{$user->name}}</p>
-                                    </div>
-                                </td>
-                                <td>{{$user->email}}</td>
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>No</div>
+                        </th>
+                        <th>
+                            <div>Name</div>
+                        </th>
+                        <th>
+                            <div>Email</div>
+                        </th>
+                        <th>
+                            <div>Options</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td> {{($users->currentPage() - 1) * $users->perPage() + $loop->iteration}}</td>
+                        <td>
+                            <div class="d-flex">
+                                <img src="{{asset('backend')}}/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                {{$user->name}}
+                            </div>
+                        </td>
+                        <td>{{$user->email}}</td>
 
-                                <td class=" text-center">
-                                    <ul class="table-controls">
-                                        <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings text-primary">
-                                                    <circle cx="12" cy="12" r="3"></circle>
-                                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                                                </svg></a> </li>
-                                        <li><a href="javascript:void(0);" wire:click.prevent="edit({{$user->id}})" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 text-success">
-                                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                                </svg></a></li>
-                                        <li><a href="javascript:void(0);" wire:click.prevent="confirmationDeleteUser({{$user->id}})" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 text-danger">
-                                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                                                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                                                </svg></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
+                                <button wire:click.prevent="edit({{$user->id}})" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button wire:click.prevent="confirmationDeleteUser({{$user->id}})" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    @if($sumUser > $loadMore)
+                    <a href="javascript:void(0);" wire:click.prevent="addLoadMore" class="btn btn-secondary">
+                        Load More {{ $loadMore }}
+                    </a>
+                    @endif
                 </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        @if($sumUser > $loadMore)
-                        <a href="javascript:void(0);" wire:click.prevent="addLoadMore" class="btn btn-secondary">
-                            Load More {{ $loadMore }}
-                        </a>
-                        @endif
-                    </div>
-
-                    <div>
-                        {{ $users->links() }}
-                    </div>
+                <div>
+                    {{ $users->links() }}
                 </div>
             </div>
-
-
         </div>
     </div>
+
 
     <!-- Modal -->
     <div wire:ignore.self class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

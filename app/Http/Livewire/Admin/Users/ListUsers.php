@@ -45,7 +45,7 @@ class ListUsers extends AdminComponent
 
         User::create($validateData);
 
-        $this->dispatchBrowserEvent('hide-form', ['message', 'User added successfully!']);
+        $this->dispatchBrowserEvent('hide-form', ['message' => 'User added successfully!']);
     }
     public function edit($id)
     {
@@ -69,7 +69,7 @@ class ListUsers extends AdminComponent
         }
         $this->user->update($validateData);
 
-        $this->dispatchBrowserEvent('hide-form', ['message', 'User updated successfully!']);
+        $this->dispatchBrowserEvent('hide-form', ['message' => 'User updated successfully!']);
     }
     public function confirmationDeleteUser($id)
     {

@@ -1,6 +1,5 @@
 @push('styles')
-<link href="{{asset('backend')}}/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
-<link href="{{asset('backend')}}/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+
 @endpush
 <div>
     <div id="tableCheckbox" class="col-lg-12 col-12 layout-spacing">
@@ -184,13 +183,5 @@
     </div>
 </div>
 @push('scripts')
-<script src="{{asset('backend')}}/plugins/flatpickr/flatpickr.js"></script>
 
-<script src="{{asset('backend')}}/plugins/flatpickr/custom-flatpickr.js"></script>
-<script>
-    var f2 = flatpickr(document.getElementById('dateTimeFlatpickr'), {
-        enableTime: true,
-        dateFormat: "Y-m-d H:i",
-    });
-</script>
 @endpush

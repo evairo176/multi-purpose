@@ -5,64 +5,50 @@
     @Include('includes.styles')
     @stack('styles')
     @livewireStyles
-    <style>
-        /*
-            The below code is for DEMO purpose --- Use it if you are using this demo otherwise Remove it
-        */
-        /*.navbar .navbar-item.navbar-dropdown {
-            margin-left: auto;
-        }*/
-        .layout-px-spacing {
-            min-height: calc(100vh - 140px) !important;
-        }
-    </style>
-
-    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-
 </head>
 
-<body class="sidebar-noneoverflow">
-    @stack('loader')
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
 
-    @Include('includes.navbar')
-    <!--  BEGIN MAIN CONTAINER  -->
-    <div class="main-container" id="container">
+        <!-- Navbar -->
+        @Include('includes.navbar')
+        <!-- /.navbar -->
 
-        <div class="overlay"></div>
-        <div class="search-overlay"></div>
-
+        <!-- Main Sidebar Container -->
         @Include('includes.sidebar')
 
-        <!--  BEGIN CONTENT AREA  -->
-        <div id="content" class="main-content">
-            <div class="layout-px-spacing">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
 
 
-                <!-- CONTENT AREA -->
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    @yield('content')
 
-
-                <div class="row layout-top-spacing">
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
-
-                        @yield('content')
-
-                        {{isset($slot)? $slot : null}}
-
-                    </div>
-
+                    {{isset($slot)? $slot : null}}
                 </div>
-
-
-                <!-- CONTENT AREA -->
-
             </div>
-            @Include('includes.footer')
+            <!-- /.content -->
         </div>
-        <!--  END CONTENT AREA  -->
+        <!-- /.content-wrapper -->
 
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        @Include('includes.footer')
     </div>
-    <!-- END MAIN CONTAINER -->
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
 
     @Include('includes.scripts')
     @stack('scripts')

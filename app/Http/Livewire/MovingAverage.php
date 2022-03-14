@@ -93,7 +93,7 @@ class MovingAverage extends Component
 
         $this->datas->update($validateData);
         $this->dispatchBrowserEvent('show-chart');
-        $this->dispatchBrowserEvent('hide-form', ['message', 'User updated successfully!']);
+        $this->dispatchBrowserEvent('hide-form', ['message' => 'User updated successfully!']);
     }
     public function render()
     {

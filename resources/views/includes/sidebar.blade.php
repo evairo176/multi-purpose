@@ -1,64 +1,58 @@
-  <!--  BEGIN SIDEBAR  -->
-  <div class="sidebar-wrapper sidebar-theme">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="{{asset('backend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
 
-      <nav id="sidebar">
-          <div class="profile-info">
-              <figure class="user-cover-image"></figure>
-              <div class="user-info">
-                  <img src="{{asset('backend')}}/assets/img/profile-17.jpeg" alt="avatar">
-                  <h6 class="">Sonia Shaw</h6>
-                  <p class="">Project Leader</p>
-              </div>
-          </div>
-          <div class="shadow-bottom"></div>
-          <ul class="list-unstyled menu-categories" id="accordionExample">
-              <li class="menu {{ request()->is('admin/dashboard') ? 'active' : ''}}">
-                  <a href="{{ url('/admin/dashboard') }}" aria-expanded="{{ request()->is('admin/dashboard') ? 'true' : ''}}" class="dropdown-toggle">
-                      <div class="">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                          </svg>
-                          <span>Dashboard</span>
-                      </div>
-                  </a>
-              </li>
-              <li class="menu {{ request()->is('admin/appointments') ? 'active' : ''}}">
-                  <a href="{{ url('/admin/appointments') }}" aria-expanded="{{ request()->is('admin/appointments') ? 'true' : ''}}" class="dropdown-toggle">
-                      <div class="">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                          </svg>
-                          <span>Appointments</span>
-                      </div>
-                  </a>
-              </li>
-              <li class="menu {{ request()->is('admin/users') ? 'active' : ''}}">
-                  <a href="{{ url('/admin/users') }}" aria-expanded="{{ request()->is('admin/users') ? 'true' : ''}}" class="dropdown-toggle">
-                      <div class="">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                          </svg>
-                          <span>Users</span>
-                      </div>
-                  </a>
-              </li>
-              <li class="menu {{ request()->is('admin/settings') ? 'active' : ''}}">
-                  <a href="{{ url('/admin/settings') }}" aria-expanded="{{ request()->is('admin/settings') ? 'true' : ''}}" class="dropdown-toggle">
-                      <div class="">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
-                              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                          </svg>
-                          <span>Settings</span>
-                      </div>
-                  </a>
-              </li>
-          </ul>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{asset('backend')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
+        </div>
 
-      </nav>
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-  </div>
-  <!--  END SIDEBAR  -->
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href="{{url('admin/users')}}" class="nav-link {{request()->is('admin/users') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Users
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('admin/appointments')}}" class="nav-link {{request()->is('admin/appointments') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-calendar"></i>
+                        <p>
+                            Appointments
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
