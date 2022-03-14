@@ -49,9 +49,10 @@
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
-
+    @livewireScripts
     @Include('includes.scripts')
     @stack('scripts')
+
 </body>
 
 </html>

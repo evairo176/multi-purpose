@@ -35,6 +35,14 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
+                    <a href="{{url('admin/dashboard')}}" class="nav-link {{request()->is('admin/dashboard') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{url('admin/users')}}" class="nav-link {{request()->is('admin/users') ? 'active' : ''}}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -47,6 +55,22 @@
                         <i class="nav-icon fas fa-calendar"></i>
                         <p>
                             Appointments
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('admin/settings')}}" class="nav-link {{request()->is('admin/settings') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Settings
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('admin/logout')}}" class="nav-link {{request()->is('admin/logout') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>
+                            Logout
                         </p>
                     </a>
                 </li>

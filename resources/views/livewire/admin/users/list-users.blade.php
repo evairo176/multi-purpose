@@ -18,11 +18,11 @@
     <div class="card card-primary card-outline">
         <div class="card-header">
             <div class="text-right">
-                <a href="javascript:void(0);" wire:click.prevent="addNew" class="btn btn-primary mb-2" id="addNewdesa" data-toggle="modal" data-target="#modaldesa">Add New User</a>
+                <a href="javascript:void(0);" wire:click.prevent="addNew" class="btn btn-primary mb-2">Add New User</a>
             </div>
         </div>
         <div class="card-body table-responsive p-0">
-            <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
+            <table class="table table-hover ">
                 <thead>
                     <tr>
                         <th>
@@ -42,7 +42,7 @@
                 <tbody>
                     @foreach($users as $user)
                     <tr>
-                        <td> {{($users->currentPage() - 1) * $users->perPage() + $loop->iteration}}</td>
+                        <td>{{($users->currentPage() - 1) * $users->perPage() + $loop->iteration}}</td>
                         <td>
                             <div class="d-flex">
                                 <img src="{{asset('backend')}}/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
