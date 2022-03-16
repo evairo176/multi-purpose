@@ -6,8 +6,7 @@
 <script src="{{asset('backend')}}/dist/js/adminlte.min.js"></script>
 <!-- Toastr -->
 <script src="{{asset('backend')}}/plugins/toastr/toastr.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="{{asset('backend')}}/plugins/sweetalert2/sweetalert2.min.js"></script>
+
 <script>
     $(document).ready(function() {
         toastr.options = {
@@ -46,12 +45,4 @@
             toastr.success(event.detail.message, 'Success!');
         })
     });
-</script>
-<script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<a href="">Why do I have this issue?</a>'
-    })
 </script>

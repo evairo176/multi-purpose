@@ -17,8 +17,9 @@
     </div>
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <div class="text-right">
-                <a href="javascript:void(0);" wire:click.prevent="addNew" class="btn btn-primary mb-2">Add New User</a>
+            <div class="d-flex justify-content-between align-items-center">
+                <x-search-input wire:model="search" />
+                <button wire:click.prevent="addNew" class="btn btn-primary ">Add New User</button>
             </div>
         </div>
         <div class="card-body table-responsive p-0">
@@ -42,15 +43,15 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach($users as $user)
+                <tbody wire:loading.class="text-muted">
+                    @forelse($users as $user)
                     <tr>
                         <td>{{($users->currentPage() - 1) * $users->perPage() + $loop->iteration}}</td>
                         <td>
-                            <div class="d-flex">
-                                <img src="{{asset('backend')}}/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                {{$user->name}}
-                            </div>
+
+                            <img src="{{ $user->avatar_url }}" style="width: 50px;" alt="Product 1" class="img img-circle mr-1">
+                            {{$user->name}}
+
                         </td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->created_at->toFormattedDate()}}</td>
@@ -63,7 +64,15 @@
                             </div>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <img src="{{asset('backend')}}/dist/img/noresult.png" alt="Product 1" style="max-width: 150px;" class="img-fluid">
+                            <br>
+                            No results found
+                        </td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
@@ -133,6 +142,19 @@
                             <label for="password2">Password</label>
                             <input type="password" wire:model.defer="state.password_confirmation" class="form-control" id="password_!" placeholder="Confirm Password">
                         </div>
+                        <div class="form-group">
+                            <label for="customFile">Profile Photo</label>
+                            <div class="custom-file">
+                                <input wire:model="photo" type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">
+                                    @if($photo)
+                                    {{ $photo->getClientOriginalName() }}
+                                    @else
+                                    Choose Image
+                                    @endif
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -174,5 +196,7 @@
     </div>
 </div>
 @push('scripts')
+<!-- bs-custom-file-input -->
+<script src="{{asset('backend')}}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
 @endpush

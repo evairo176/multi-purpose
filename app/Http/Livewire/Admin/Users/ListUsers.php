@@ -5,10 +5,11 @@ namespace App\Http\Livewire\Admin\Users;
 use App\Http\Livewire\Admin\AdminComponent;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
-
+use Livewire\WithFileUploads;
 
 class ListUsers extends AdminComponent
 {
+    use WithFileUploads;
 
     public $state = [];
     public $showEditModal = false;
@@ -16,7 +17,13 @@ class ListUsers extends AdminComponent
     public $userIdBeingRemoved = null;
     public $loadMore = 5;
     public $sumUser;
+    public $search = null;
+    public $photo;
 
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
     public function addLoadMore()
     {
         // dd('da');
@@ -42,6 +49,10 @@ class ListUsers extends AdminComponent
         ])->validate();
 
         $validateData['password'] = bcrypt($validateData['password']);
+
+        if ($this->photo) {
+            $validateData['avatar'] = $this->photo->store('/', 'avatars');
+        }
 
         User::create($validateData);
 
@@ -85,7 +96,12 @@ class ListUsers extends AdminComponent
     }
     public function render()
     {
-        $users = User::latest()->paginate($this->loadMore);
+        // dd($this->searchTerm);
+        $users = User::query()
+            ->where('name', 'like', '%' . $this->search . '%')
+            ->orWhere('email', 'like', '%' . $this->search . '%')
+            ->latest()
+            ->paginate($this->loadMore);
         $this->sumUser = User::count();
         return view('livewire.admin.users.list-users', [
             'users' => $users
