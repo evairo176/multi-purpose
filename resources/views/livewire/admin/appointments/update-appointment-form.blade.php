@@ -2,17 +2,17 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <link rel="stylesheet" href="{{asset('backend')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
 
-@endpush
+@endpusha
 <div>
     <div class="content-header px-0">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Add New Appointment</h1>
+                <h1 class="m-0">Update Appointment</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Add New Appointment</li>
+                    <li class="breadcrumb-item active">Update Appointment</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -23,7 +23,7 @@
                 <a href="{{ url('admin/appointments') }}" class="btn btn-danger mb-2">Cancel</a>
             </div>
         </div>
-        <form wire:submit.prevent="createAppointment">
+        <form wire:submit.prevent="updateAppointment">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -86,7 +86,8 @@
                         <div wire:ignore class="form-group">
                             <label for="note">Note</label>
                             <textarea wire:model.defer="state.note" data-note="@this" class="form-control" id="note" rows="10">
-                        </textarea>
+
+                            </textarea>
                         </div>
                     </div>
                 </div>
@@ -110,7 +111,7 @@
             </div>
             <div class="card-footer">
                 <button id="submit" type="submit" class="btn btn-primary mt-3 mb-0">
-                    Save add appointment
+                    Save Changes
                 </button>
             </div>
         </form>

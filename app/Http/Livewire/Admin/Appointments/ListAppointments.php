@@ -18,7 +18,7 @@ class ListAppointments extends AdminComponent
     {
         // dd('da');
 
-        if ($this->sumUser > $this->loadMore) {
+        if ($this->sumAppointment > $this->loadMore) {
             $this->loadMore *= 2;
         }
         $this->loadMore = 0;
@@ -29,9 +29,13 @@ class ListAppointments extends AdminComponent
         $this->showEditModal = false;
         $this->dispatchBrowserEvent('show-form');
     }
+
     public function render()
     {
-        $appointments = Appointments::latest()->paginate($this->loadMore);
+        $appointments = Appointments::with('client')
+            ->latest()
+            ->paginate($this->loadMore);
+        $this->sumAppointment = Appointments::count();
         return view('livewire.admin.appointments.list-appointments', [
             'appointments' => $appointments
         ]);

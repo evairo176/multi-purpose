@@ -51,20 +51,24 @@
                         <td>{{($appointments->currentPage() - 1) * $appointments->perPage() + $loop->iteration}}</td>
                         <td>
                             <div class="d-flex">
-                                <div class="usr-img-frame mr-2 rounded-circle">
-                                    <img alt="avatar" class="img-fluid rounded-circle" src="{{ url('backend') }}/assets/img/boy.png">
-                                </div>
-                                <p class="align-self-center mb-0">{{$appointment->name}}</p>
+                                <img src="http://127.0.0.1:8000/backend/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                <p class="align-self-center mb-0">{{$appointment->client->name}}</p>
                             </div>
                         </td>
                         <td>{{$appointment->date}}</td>
                         <td>{{$appointment->time}}</td>
-                        <td>{{$appointment->status}}</td>
+                        <td>
+                            @if($appointment->status == 'SCHEDULED')
+                            <span class="badge badge-primary">SCHEDULED</span>
+                            @elseif($appointment->status == 'CLOSED')
+                            <span class="badge badge-success">CLOSED</span>
+                            @endif
+                        </td>
 
                         <td class="text-center">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
-                            <button wire:click.prevent="edit({{$appointment->id}})" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                            <button wire:click.prevent="confirmationDeleteappointment({{$appointment->id}})" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            <a href="" type="button" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            <a href="{{route('admin.appointments.edit',$appointment->id)}}" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                            <a href="" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

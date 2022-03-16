@@ -35,6 +35,9 @@
                             <div>Email</div>
                         </th>
                         <th>
+                            <div>Registerd Date</div>
+                        </th>
+                        <th>
                             <div>Options</div>
                         </th>
                     </tr>
@@ -50,6 +53,7 @@
                             </div>
                         </td>
                         <td>{{$user->email}}</td>
+                        <td>{{$user->created_at->toFormattedDate()}}</td>
 
                         <td class="text-center">
                             <div class="btn-group">
