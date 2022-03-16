@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Users;
 
 use App\Http\Livewire\Admin\AdminComponent;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Livewire\WithFileUploads;
 
@@ -35,7 +36,7 @@ class ListUsers extends AdminComponent
     }
     public function addNew()
     {
-        $this->state = [];
+        $this->reset();
         $this->showEditModal = false;
         $this->dispatchBrowserEvent('show-form');
     }
@@ -46,6 +47,7 @@ class ListUsers extends AdminComponent
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
+            'avatar' => 'required|image'
         ])->validate();
 
         $validateData['password'] = bcrypt($validateData['password']);
@@ -60,6 +62,8 @@ class ListUsers extends AdminComponent
     }
     public function edit($id)
     {
+        $this->reset();
+        // dd($this->state);
         $this->showEditModal = true;
         $this->dispatchBrowserEvent('show-form');
         $this->user = User::where('id', $id)->first();
@@ -73,10 +77,15 @@ class ListUsers extends AdminComponent
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $this->user->id,
             'password' => 'sometimes|confirmed',
+            'avatar' => 'required|image'
         ])->validate();
 
         if (!empty($validateData['password'])) {
             $validateData['password'] = bcrypt($validateData['password']);
+        }
+        if ($this->photo) {
+            Storage::disk('avatars')->delete($this->user->avatar);
+            $validateData['avatar'] = $this->photo->store('/', 'avatars');
         }
         $this->user->update($validateData);
 

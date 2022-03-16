@@ -18,6 +18,8 @@ class ListAppointments extends AdminComponent
     public $loadMore = 5;
     public $sumAppointment;
     public $status = null;
+    public $selectedRows = [];
+    public $selectPageRows = false;
 
     public function updatingSearch()
     {
@@ -50,15 +52,48 @@ class ListAppointments extends AdminComponent
         $this->resetPage();
         $this->status = $status;
     }
-
-    public function render()
+    public function updatedSelectPageRows($value)
     {
-        $appointments = Appointments::with('client')
+        if ($value) {
+            $this->selectedRows = $this->appointments->pluck('id')
+                ->map(function ($id) {
+                    return (string) $id;
+                });
+        } else {
+            $this->reset(['selectedRows', 'selectPageRows']);
+        }
+        // dd($this->selectedRows);
+    }
+    public function getAppointmentsProperty()
+    {
+        return Appointments::with('client')
             ->when($this->status, function ($query, $status) {
                 return $query->where('status', $status);
             })
             ->latest()
             ->paginate($this->loadMore);
+    }
+    public function deleteSelectedRows()
+    {
+        Appointments::whereIn('id', $this->selectedRows)->delete();
+        $this->dispatchBrowserEvent('alert', ['message' => 'All selected appointment got delete.']);
+        $this->reset(['selectedRows', 'selectPageRows']);
+    }
+    public function markAsScheduled()
+    {
+        Appointments::whereIn('id', $this->selectedRows)->update(['status' => 'SCHEDULED']);
+        $this->dispatchBrowserEvent('alert', ['message' => 'Appointment mark as scheduled has updated.']);
+        $this->reset(['selectedRows', 'selectPageRows']);
+    }
+    public function markAsClosed()
+    {
+        Appointments::whereIn('id', $this->selectedRows)->update(['status' => 'CLOSED']);
+        $this->dispatchBrowserEvent('alert', ['message' => 'Appointment mark as closed has updated.']);
+        $this->reset(['selectedRows', 'selectPageRows']);
+    }
+    public function render()
+    {
+        $appointments = $this->appointments;
         $appointmentsCount = Appointments::count();
         $scheduledAppointmentCount = Appointments::where('status', 'SCHEDULED')->count();
         $closedAppointmentCount = Appointments::where('status', 'CLOSED')->count();

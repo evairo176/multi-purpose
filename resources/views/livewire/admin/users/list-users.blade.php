@@ -144,8 +144,15 @@
                         </div>
                         <div class="form-group">
                             <label for="customFile">Profile Photo</label>
-                            <div class="custom-file">
-                                <input wire:model="photo" type="file" class="custom-file-input" id="customFile">
+                            <div class="custom-file @error('avatar') is-invalid @enderror">
+                                <div x-data="{ isUploading: false, progress: 5 }" x-on:livewire-upload-start="isUploading = true" x-on:livewire-upload-finish="isUploading = false; progress = 5" x-on:livewire-upload-error="isUploading = false" x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <input wire:model="photo" type="file" class="custom-file-input" id="customFile" accept="image/*">
+                                    <div x-show.transition="isUploading" class="progress progress-sm mt-2 rounded">
+                                        <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width: ${progress}%`">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <label class="custom-file-label" for="customFile">
                                     @if($photo)
                                     {{ $photo->getClientOriginalName() }}
@@ -154,6 +161,16 @@
                                     @endif
                                 </label>
                             </div>
+                            @if($photo)
+                            <img src="{{ $photo->temporaryUrl() }}" class="img d-block mt-2 w-100" style="width: 50px;" alt="">
+                            @else
+                            <img src="{{ $state['avatar_url'] ?? '' }}" class="img  d-block mt-2 w-100" style="width: 50px;" alt="">
+                            @endif
+                            @error('avatar')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -198,5 +215,5 @@
 @push('scripts')
 <!-- bs-custom-file-input -->
 <script src="{{asset('backend')}}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 @endpush
