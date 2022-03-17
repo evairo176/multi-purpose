@@ -39,7 +39,7 @@
                             <div>Registerd Date</div>
                         </th>
                         <th>
-                            <div>Registerd Date</div>
+                            <div>Role</div>
                         </th>
                         <th>
                             <div>Options</div>
@@ -58,6 +58,12 @@
                         </td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->created_at->toFormattedDate()}}</td>
+                        <td>
+                            <select wire:change="changeRole({{ $user  }},$event.target.value)" class="form-control">
+                                <option value="admin" {{ ($user->role == 'admin') ? 'selected' : ''}}>ADMIN</option>
+                                <option value="user" {{ ($user->role == 'user') ? 'selected' : ''}}>USER</option>
+                            </select>
+                        </td>
 
                         <td class="text-center">
                             <div class="btn-group">

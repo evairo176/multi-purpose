@@ -21,6 +21,14 @@ class ListUsers extends AdminComponent
     public $search = null;
     public $photo;
 
+    public function changeRole(User $user, $role)
+    {
+        Validator::make(['role' => $role], [
+            'role' => 'required|in:admin,user',
+        ])->validate();
+        $user->update(['role' => $role]);
+        $this->dispatchBrowserEvent('alert', ['message' => "Role changed to {$role} successfully!"]);
+    }
     public function updatingSearch()
     {
         $this->resetPage();
