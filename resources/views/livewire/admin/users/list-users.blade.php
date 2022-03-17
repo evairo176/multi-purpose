@@ -39,6 +39,9 @@
                             <div>Registerd Date</div>
                         </th>
                         <th>
+                            <div>Registerd Date</div>
+                        </th>
+                        <th>
                             <div>Options</div>
                         </th>
                     </tr>
@@ -162,7 +165,7 @@
                                 </label>
                             </div>
                             @if($photo)
-                            <img src="{{ $photo->temporaryUrl() }}" class="img d-block mt-2 w-100" style="width: 50px;" alt="">
+                            <img src="{{ $photo->temporaryUrl()}}" class="img d-block mt-2 w-100" style="width: 50px;" alt="">
                             @else
                             <img src="{{ $state['avatar_url'] ?? '' }}" class="img  d-block mt-2 w-100" style="width: 50px;" alt="">
                             @endif
