@@ -47,12 +47,13 @@ class ListUsers extends AdminComponent
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'avatar' => 'required|image'
+            // 'avatar' => 'required|mimes:jpg,jpeg,png',
         ])->validate();
 
         $validateData['password'] = bcrypt($validateData['password']);
 
         if ($this->photo) {
+            // $name = md5($this->photo . microtime()) . '.' . $this->images->extension();
             $validateData['avatar'] = $this->photo->store('/', 'avatars');
         }
 
@@ -77,7 +78,7 @@ class ListUsers extends AdminComponent
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $this->user->id,
             'password' => 'sometimes|confirmed',
-            'avatar' => 'required|image'
+            // 'avatar' => 'required|image'
         ])->validate();
 
         if (!empty($validateData['password'])) {
