@@ -10,7 +10,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ auth()->user()->avatar_url}}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ auth()->user()->avatar_url}}" id="profileImagex" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ auth()->user()->name }}</a>
@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{url('admin/users')}}" class="nav-link {{request()->is('admin/users') ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-user"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Users
                         </p>
@@ -63,6 +63,30 @@
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Settings
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('admin/profile')}}" class="nav-link {{request()->is('admin/profile') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('kecamatan')}}" class="nav-link {{request()->is('kecamatan') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Kecamatan
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('desa')}}" class="nav-link {{request()->is('desa') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Desa
                         </p>
                     </a>
                 </li>

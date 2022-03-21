@@ -6,6 +6,8 @@
 <script src="{{asset('backend')}}/dist/js/adminlte.min.js"></script>
 <!-- Toastr -->
 <script src="{{asset('backend')}}/plugins/toastr/toastr.min.js"></script>
+<!-- alpine  -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 <script>
     $(document).ready(function() {

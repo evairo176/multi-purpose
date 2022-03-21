@@ -224,5 +224,4 @@
 @push('scripts')
 <!-- bs-custom-file-input -->
 <script src="{{asset('backend')}}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 @endpush

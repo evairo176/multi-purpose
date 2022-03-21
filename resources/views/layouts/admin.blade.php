@@ -25,7 +25,7 @@
             <div class="content">
                 <div class="container-fluid">
 
-
+                    @yield('content');
                     {{isset($slot)? $slot : null}}
                 </div>
             </div>
