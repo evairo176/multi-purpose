@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,7 +15,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     const ROLE_ADMIN = 'admin';
-    const ROLE_USER = 'user';
+    const ROLE_USER = 'kader';
     /**
      * The attributes that are mass assignable.
      *
@@ -26,6 +27,11 @@ class User extends Authenticatable
         'password',
         'avatar',
         'role',
+        'tgl_lahir',
+        'tahun_kader',
+        'pendidikan',
+        'tahun_pelatihan',
+        'no_hp',
     ];
 
     /**
@@ -48,6 +54,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'tgl_lahir' => 'date',
     ];
 
     protected $appends = [
@@ -67,5 +74,16 @@ class User extends Authenticatable
             return false;
         }
         return true;
+    }
+    public function getTglLahirAttribute($value)
+    {
+        return Carbon::parse($value)->toFormattedDate();
+    }
+    public function getUmurAttribute()
+    {
+        $now = Carbon::now();
+        $tgl_lahir = Carbon::parse($this->tgl_lahir);
+        $umur = $tgl_lahir->diffInYears($now);
+        return $umur;
     }
 }

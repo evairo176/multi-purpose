@@ -20,13 +20,30 @@
     </div>
     <div class="card card-primary card-outline">
         <div class="card-header">
+            Perhitungan perencanaan produksi roti dengan metode moving average
+        </div>
+        <div class="card-body table-responsive p-0">
+            <div class="p-3">
+                Nama Anggota Kelompok:
+                <ul>
+                    <li>Dicki Prasetya</li>
+                    <li>Anisa Khusnul</li>
+                    <li>Iqbal Rasetio</li>
+                </ul>
+                Dari : D3TI3C
+            </div>
+        </div>
+    </div>
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <!-- <button wire:click="changeDefaultData" class="btn btn-primary">Ubah data semula</button> -->
         </div>
         <div class="card-body table-responsive p-0">
             <table class="table table-bordered table-hover table-striped table-checkable table-highlight-head mb-4">
                 <thead>
                     <tr>
                         <th>
-                            <div>Index Waktu (t)</div>
+                            <div>State Waktu (t)</div>
                         </th>
                         <th>
                             <div>bulan</div>
@@ -116,7 +133,7 @@
                     <thead>
                         <tr>
                             <th>
-                                <div>Index Waktu (t)</div>
+                                <div>State Waktu (t)</div>
                             </th>
                             <th>
                                 <div>bulan</div>
@@ -151,7 +168,7 @@
                             <td>
                                 <div>
 
-                                    {{$index_12}}
+                                    {{$state[11]}}
                                 </div>
                             </td>
                             <td>-</td>
@@ -163,7 +180,7 @@
                             <td>
                                 <div>
 
-                                    {{$index_11}}
+                                    {{$state[10]}}
                                 </div>
                             </td>
                             <td>-</td>
@@ -190,7 +207,7 @@
                                     83
                                 </div>
                             </td>
-                            <td>{{($index_1 + $index_2 + $index_3 + $index_4)/4}}</td>
+                            <td>{{($state[0] + $state[1] + $state[2] + $state[3])/4}}</td>
                             <td>-</td>
                         </tr>
                         <tr>
@@ -199,11 +216,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_6}}
+                                    {{$state[5]}}
                                 </div>
                             </td>
-                            <td>{{($index_2 + $index_3 + $index_4 + $index_5)/4}}</td>
-                            <td>{{($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5}}</td>
+                            <td>{{($state[1] + $state[2] + $state[3] + $state[4])/4}}</td>
+                            <td>{{($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5}}</td>
                         </tr>
                         <tr>
                             <td>7</td>
@@ -211,11 +228,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_7}}
+                                    {{$state[6]}}
                                 </div>
                             </td>
-                            <td>{{( $index_3 + $index_4 + $index_5 + $index_6)/4}}</td>
-                            <td>{{($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5}}</td>
+                            <td>{{( $state[2] + $state[3] + $state[4] + $state[5])/4}}</td>
+                            <td>{{($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5}}</td>
                         </tr>
                         <tr>
                             <td>8</td>
@@ -223,11 +240,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_8}}
+                                    {{$state[7]}}
                                 </div>
                             </td>
-                            <td>{{($index_4 + $index_5 + $index_6 + $index_7)/4}}</td>
-                            <td>{{($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5}}</td>
+                            <td>{{($state[3] + $state[4] + $state[5] + $state[6])/4}}</td>
+                            <td>{{($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5}}</td>
                         </tr>
                         <tr>
                             <td>9</td>
@@ -235,11 +252,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_9}}
+                                    {{$state[8]}}
                                 </div>
                             </td>
-                            <td>{{($index_5 + $index_6 + $index_7 + $index_8)/4}}</td>
-                            <td>{{($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5}}</td>
+                            <td>{{($state[4] + $state[5] + $state[6] + $state[7])/4}}</td>
+                            <td>{{($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5}}</td>
                         </tr>
                         <tr>
                             <td>10</td>
@@ -247,11 +264,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_10}}
+                                    {{$state[9]}}
                                 </div>
                             </td>
-                            <td>{{($index_6 + $index_7 + $index_8 + $index_9)/4}}</td>
-                            <td>{{($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5}}</td>
+                            <td>{{($state[5] + $state[6] + $state[7] + $state[8])/4}}</td>
+                            <td>{{($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5}}</td>
                         </tr>
                         <tr>
                             <td>11</td>
@@ -259,11 +276,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_11}}
+                                    {{$state[10]}}
                                 </div>
                             </td>
-                            <td>{{($index_7 + $index_8 + $index_9 + $index_10)/4}}</td>
-                            <td>{{($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5}}</td>
+                            <td>{{($state[6] + $state[7] + $state[8] + $state[9])/4}}</td>
+                            <td>{{($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5}}</td>
                         </tr>
                         <tr>
                             <td>12</td>
@@ -271,11 +288,11 @@
                             <td>
                                 <div>
 
-                                    {{$index_12}}
+                                    {{$state[11]}}
                                 </div>
                             </td>
-                            <td>{{($index_8 + $index_9 + $index_10 + $index_11)/4}}</td>
-                            <td>{{($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5}}</td>
+                            <td>{{($state[7] + $state[8] + $state[9] + $state[10])/4}}</td>
+                            <td>{{($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -305,7 +322,7 @@
                     <thead>
                         <tr>
                             <th>
-                                <div>Index Waktu (t)</div>
+                                <div>State Waktu (t)</div>
                             </th>
                             <th>
                                 <div>Permintaan Aktuan (a)</div>
@@ -333,8 +350,8 @@
                                     83
                                 </div>
                             </td>
-                            <td>{{($index_1 + $index_2 + $index_3 + $index_4)/4}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4)/4 - 83)}}</td>
+                            <td>{{($state[0] + $state[1] + $state[2] + $state[3])/4}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3])/4 - 83)}}</td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
@@ -343,113 +360,113 @@
                             <td>
                                 <div>
 
-                                    {{$index_6}}
+                                    {{$state[5]}}
                                 </div>
                             </td>
-                            <td>{{($index_2 + $index_3 + $index_4 + $index_5)/4}}</td>
-                            <td>{{abs(($index_2 + $index_3 + $index_4 + $index_5)/4 - $index_6)}}</td>
-                            <td>{{($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6)}}</td>
+                            <td>{{($state[1] + $state[2] + $state[3] + $state[4])/4}}</td>
+                            <td>{{abs(($state[1] + $state[2] + $state[3] + $state[4])/4 - $state[5])}}</td>
+                            <td>{{($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5])}}</td>
                         </tr>
                         <tr>
                             <td>7</td>
                             <td>
                                 <div>
 
-                                    {{$index_7}}
+                                    {{$state[6]}}
                                 </div>
                             </td>
-                            <td>{{( $index_3 + $index_4 + $index_5 + $index_6)/4}}</td>
-                            <td>{{abs(( $index_3 + $index_4 + $index_5 + $index_6)/4 - $index_7)}}</td>
-                            <td>{{($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5}}</td>
-                            <td>{{abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)}}</td>
+                            <td>{{( $state[2] + $state[3] + $state[4] + $state[5])/4}}</td>
+                            <td>{{abs(( $state[2] + $state[3] + $state[4] + $state[5])/4 - $state[6])}}</td>
+                            <td>{{($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5}}</td>
+                            <td>{{abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])}}</td>
                         </tr>
                         <tr>
                             <td>8</td>
                             <td>
                                 <div>
 
-                                    {{$index_8}}
+                                    {{$state[7]}}
                                 </div>
                             </td>
-                            <td>{{($index_4 + $index_5 + $index_6 + $index_7)/4}}</td>
-                            <td>{{abs(($index_4 + $index_5 + $index_6 + $index_7)/4 - $index_8)}}</td>
-                            <td>{{($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5}}</td>
-                            <td>{{abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)}}</td>
+                            <td>{{($state[3] + $state[4] + $state[5] + $state[6])/4}}</td>
+                            <td>{{abs(($state[3] + $state[4] + $state[5] + $state[6])/4 - $state[7])}}</td>
+                            <td>{{($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5}}</td>
+                            <td>{{abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])}}</td>
                         </tr>
                         <tr>
                             <td>9</td>
                             <td>
                                 <div>
 
-                                    {{$index_9}}
+                                    {{$state[8]}}
                                 </div>
                             </td>
-                            <td>{{($index_5 + $index_6 + $index_7 + $index_8)/4}}</td>
-                            <td>{{abs(($index_5 + $index_6 + $index_7 + $index_8)/4 - $index_9)}}</td>
-                            <td>{{($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5}}</td>
-                            <td>{{abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)}}</td>
+                            <td>{{($state[4] + $state[5] + $state[6] + $state[7])/4}}</td>
+                            <td>{{abs(($state[4] + $state[5] + $state[6] + $state[7])/4 - $state[8])}}</td>
+                            <td>{{($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5}}</td>
+                            <td>{{abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])}}</td>
                         </tr>
                         <tr>
                             <td>10</td>
                             <td>
                                 <div>
 
-                                    {{$index_10}}
+                                    {{$state[9]}}
                                 </div>
                             </td>
-                            <td>{{($index_6 + $index_7 + $index_8 + $index_9)/4}}</td>
-                            <td>{{abs(($index_6 + $index_7 + $index_8 + $index_9)/4 - $index_10)}}</td>
-                            <td>{{($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5}}</td>
-                            <td>{{abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)}}</td>
+                            <td>{{($state[5] + $state[6] + $state[7] + $state[8])/4}}</td>
+                            <td>{{abs(($state[5] + $state[6] + $state[7] + $state[8])/4 - $state[9])}}</td>
+                            <td>{{($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5}}</td>
+                            <td>{{abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])}}</td>
                         </tr>
                         <tr>
                             <td>11</td>
                             <td>
                                 <div>
 
-                                    {{$index_11}}
+                                    {{$state[10]}}
                                 </div>
                             </td>
-                            <td>{{($index_7 + $index_8 + $index_9 + $index_10)/4}}</td>
-                            <td>{{abs(($index_7 + $index_8 + $index_9 + $index_10)/4 - $index_11)}}</td>
-                            <td>{{($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5}}</td>
-                            <td>{{abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)}}</td>
+                            <td>{{($state[6] + $state[7] + $state[8] + $state[9])/4}}</td>
+                            <td>{{abs(($state[6] + $state[7] + $state[8] + $state[9])/4 - $state[10])}}</td>
+                            <td>{{($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5}}</td>
+                            <td>{{abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])}}</td>
                         </tr>
                         <tr>
                             <td>12</td>
                             <td>
                                 <div>
 
-                                    {{$index_12}}
+                                    {{$state[11]}}
                                 </div>
                             </td>
-                            <td>{{($index_8 + $index_9 + $index_10 + $index_11)/4}}</td>
-                            <td>{{abs(($index_8 + $index_9 + $index_10 + $index_11)/4 - $index_12)}}</td>
-                            <td>{{($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5}}</td>
-                            <td>{{abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)}}</td>
+                            <td>{{($state[7] + $state[8] + $state[9] + $state[10])/4}}</td>
+                            <td>{{abs(($state[7] + $state[8] + $state[9] + $state[10])/4 - $state[11])}}</td>
+                            <td>{{($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5}}</td>
+                            <td>{{abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])}}</td>
                         </tr>
                         <tr>
                             <td colspan="3"></td>
                             <td>MAD = {{
-                                   ( (abs(($index_1 + $index_2 + $index_3 + $index_4)/4 - 83)) + 
-                                    (abs(($index_2 + $index_3 + $index_4 + $index_5)/4 - $index_6)) +
-                                    (abs(($index_3 + $index_4 + $index_5 + $index_6)/4 - $index_7)) +
-                                    (abs(($index_4 + $index_5 + $index_6 + $index_7)/4 - $index_8)) +
-                                    (abs(($index_5 + $index_6 + $index_7 + $index_8)/4 - $index_9)) +
-                                    (abs(($index_6 + $index_7 + $index_8 + $index_9)/4 - $index_10)) +
-                                    (abs(($index_7 + $index_8 + $index_9 + $index_10)/4 - $index_11)) +
-                                    (abs(($index_8 + $index_9 + $index_10 + $index_11)/4 - $index_12)) ) / 8
+                                   ( (abs(($state[0] + $state[1] + $state[2] + $state[3])/4 - 83)) + 
+                                    (abs(($state[1] + $state[2] + $state[3] + $state[4])/4 - $state[5])) +
+                                    (abs(($state[2] + $state[3] + $state[4] + $state[5])/4 - $state[6])) +
+                                    (abs(($state[3] + $state[4] + $state[5] + $state[6])/4 - $state[7])) +
+                                    (abs(($state[4] + $state[5] + $state[6] + $state[7])/4 - $state[8])) +
+                                    (abs(($state[5] + $state[6] + $state[7] + $state[8])/4 - $state[9])) +
+                                    (abs(($state[6] + $state[7] + $state[8] + $state[9])/4 - $state[10])) +
+                                    (abs(($state[7] + $state[8] + $state[9] + $state[10])/4 - $state[11])) ) / 8
                                 }}</td>
                             <td></td>
                             <td>MAD = {{
-                                  (  (abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6)) + 
-                                    (abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)) +
-                                   (abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)) +
-                                   (abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)) +
-                                   (abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)) + 
-                                   (abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)) + 
-                                    (abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)) ) / 7
+                                  (  (abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5])) + 
+                                    (abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])) +
+                                   (abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])) +
+                                   (abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])) +
+                                   (abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])) + 
+                                   (abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])) + 
+                                    (abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])) ) / 7
                                 }}</td>
                         </tr>
                     </tbody>
@@ -517,115 +534,115 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>{{($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5}}</td>
+                            <td>{{($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_6}}
+                                    {{$state[5]}}
                                 </div>
                             </td>
-                            <td>{{$index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5}}</td>
-                            <td>{{$index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) / 1}}</td>
-                            <td>{{round(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) / (abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) / 1),2)}}</td>
+                            <td>{{$state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5}}</td>
+                            <td>{{$state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) / 1}}</td>
+                            <td>{{round(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) / (abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) / 1),2)}}</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>{{($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5}}</td>
+                            <td>{{($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_7}}
+                                    {{$state[6]}}
                                 </div>
                             </td>
-                            <td>{{$index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5}}</td>
-                            <td>{{($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)}}</td>
-                            <td>{{abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)) / 2}}</td>
-                            <td>{{round((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7)) / 2),2)}}</td>
+                            <td>{{$state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5}}</td>
+                            <td>{{($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)}}</td>
+                            <td>{{abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])) / 2}}</td>
+                            <td>{{round((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6])) / 2),2)}}</td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>{{($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5}}</td>
+                            <td>{{($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_8}}
+                                    {{$state[7]}}
                                 </div>
                             </td>
-                            <td>{{$index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5}}</td>
-                            <td>{{(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5)}}</td>
-                            <td>{{abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)) / 3}}</td>
-                            <td>{{round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8)) / 3),2)}}</td>
+                            <td>{{$state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5}}</td>
+                            <td>{{(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5)}}</td>
+                            <td>{{abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])) / 3}}</td>
+                            <td>{{round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7])) / 3),2)}}</td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>{{($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5}}</td>
+                            <td>{{($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_9}}
+                                    {{$state[8]}}
                                 </div>
                             </td>
-                            <td>{{$index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5}}</td>
-                            <td>{{(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5)}}</td>
-                            <td>{{abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)) / 4}}</td>
-                            <td>{{round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9)) / 4),2)}}</td>
+                            <td>{{$state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5}}</td>
+                            <td>{{(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5)}}</td>
+                            <td>{{abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])) / 4}}</td>
+                            <td>{{round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8])) / 4),2)}}</td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>{{($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5}}</td>
+                            <td>{{($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_10}}
+                                    {{$state[9]}}
                                 </div>
                             </td>
-                            <td>{{$index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5}}</td>
-                            <td>{{(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5)}}</td>
-                            <td>{{abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)) / 5}}</td>
-                            <td>{{round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)) / 5),2)}}</td>
+                            <td>{{$state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5}}</td>
+                            <td>{{(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5)}}</td>
+                            <td>{{abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])) / 5}}</td>
+                            <td>{{round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])) / 5),2)}}</td>
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td>{{($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5}}</td>
+                            <td>{{($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_11}}
+                                    {{$state[10]}}
                                 </div>
                             </td>
-                            <td>{{$index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5}}</td>
-                            <td>{{(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5)}}</td>
-                            <td>{{abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)) / 6}}</td>
-                            <td>{{round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)) / 6),2)}}</td>
+                            <td>{{$state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5}}</td>
+                            <td>{{(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5)}}</td>
+                            <td>{{abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])) / 6}}</td>
+                            <td>{{round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])) / 6),2)}}</td>
                         </tr>
                         <tr>
                             <td>7</td>
-                            <td>{{($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5}}</td>
+                            <td>{{($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5}}</td>
                             <td>
                                 <div>
 
-                                    {{$index_12}}
+                                    {{$state[11]}}
                                 </div>
                             </td>
-                            <td>{{$index_12 - ($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5}}</td>
-                            <td>{{(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5) + ($index_12 - ($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5)}}</td>
-                            <td>{{abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)}}</td>
-                            <td>{{abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)+abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)}}</td>
-                            <td>{{(abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)+abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)) / 7}}</td>
-                            <td>{{round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5) + ($index_12 - ($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5)/5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6)/5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7)/5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8)/5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9)/5 - $index_10)+abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10)/5 - $index_11)+abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11)/5 - $index_12)) / 7),2)}}</td>
+                            <td>{{$state[11] - ($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5}}</td>
+                            <td>{{(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5) + ($state[11] - ($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5)}}</td>
+                            <td>{{abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])}}</td>
+                            <td>{{abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])+abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])}}</td>
+                            <td>{{(abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])+abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])) / 7}}</td>
+                            <td>{{round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5) + ($state[11] - ($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4])/5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5])/5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6])/5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7])/5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8])/5 - $state[9])+abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9])/5 - $state[10])+abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10])/5 - $state[11])) / 7),2)}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -634,30 +651,7 @@
 
         </div>
     </div>
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <h4>Chart</h4>
-        </div>
-        <div class="card-body">
-            <?php
-            $rataData = ($index_6 + $index_7 + $index_8 + $index_9 + $index_10 + $index_11 + $index_12) / 7;
-            $index1 = round(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) / (abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) / 1), 2);
-            $index2 = round((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7)) / 2), 2);
-            $index3 = round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8)) / 3), 2);
-            $index4 = round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9)) / 4), 2);
-            $index5 = round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10)) / 5), 2);
-            $index6 = round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10) + abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5 - $index_11)) / 6), 2);
-            $index7 = round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5) + ($index_12 - ($index_7 + $index_8 + $index_9 + $index_10 + $index_11) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10) + abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5 - $index_11) + abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11) / 5 - $index_12)) / 7), 2); ?>
-            dari perhitungan di atas kita akan membuat peta kontrol tracking signal, dimana dalam sebaran peta kontrol tracking signal terlihat bahwa nilai bergerak tidak melebihi dari ±4. sehingga permintaan ibu Shabrina di bulan Januari 2022 sebesar {{ round($rataData + max($index1,$index2,$index3,$index4,$index5,$index6,$index7) ,0)}} roti bisa digunakan untuk Perhitungan perencanaan produksi roti.
-            <br><br>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="">
-                    <canvas id="myChart" style="width:100%;"></canvas>
-                </div>
-            </div>
 
-        </div>
-    </div>
     <div id="tableCheckbox" class="col-lg-12 col-12 layout-spacing">
         <div class="statbox widget box box-shadow">
             <div class="widget-heading d-flex justify-content-between align-items-center">
@@ -668,11 +662,36 @@
             </div>
         </div>
     </div>
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h4>Chart</h4>
+        </div>
+        <div class="card-body">
+            <?php
+            $rataData = ($state[5] + $state[6] + $state[7] + $state[8] + $state[9] + $state[10] + $state[11]) / 7;
+            $state1 = round(($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) / (abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) / 1), 2);
+            $state2 = round((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6])) / 2), 2);
+            $state3 = round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5 - $state[7])) / 3), 2);
+            $state4 = round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5 - $state[8])) / 4), 2);
+            $state5 = round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5 - $state[9])) / 5), 2);
+            $state6 = round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5 - $state[9]) + abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9]) / 5 - $state[10])) / 6), 2);
+            $state7 = round(((($state[5] - ($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5) + ($state[6] - ($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5)) + ($state[7] - ($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5) + ($state[8] - ($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5) + ($state[9] - ($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5) + ($state[10] - ($state[5] + $state[6] + $state[7] + $state[8] + $state[9]) / 5) + ($state[11] - ($state[6] + $state[7] + $state[8] + $state[9] + $state[10]) / 5)) / ((abs(($state[0] + $state[1] + $state[2] + $state[3] + $state[4]) / 5 - $state[5]) + abs(($state[1] + $state[2] + $state[3] + $state[4] + $state[5]) / 5 - $state[6]) + abs(($state[2] + $state[3] + $state[4] + $state[5] + $state[6]) / 5 - $state[7]) + abs(($state[3] + $state[4] + $state[5] + $state[6] + $state[7]) / 5 - $state[8]) + abs(($state[4] + $state[5] + $state[6] + $state[7] + $state[8]) / 5 - $state[9]) + abs(($state[5] + $state[6] + $state[7] + $state[8] + $state[9]) / 5 - $state[10]) + abs(($state[6] + $state[7] + $state[8] + $state[9] + $state[10]) / 5 - $state[11])) / 7), 2); ?>
+            dari perhitungan di atas kita akan membuat peta kontrol tracking signal, dimana dalam sebaran peta kontrol tracking signal terlihat bahwa nilai bergerak tidak melebihi dari ±4. sehingga permintaan ibu Shabrina di bulan Januari 2022 sebesar {{ round($rataData + max($state1,$state2,$state3,$state4,$state5,$state6,$state7) ,0)}} roti bisa digunakan untuk Perhitungan perencanaan produksi roti.
+            <br><br>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="">
+                    <canvas id="myChart" style="width:100%;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
     @else
 
     @endif
+
+
     <!-- Modal -->
-    <div wire:ignore.self class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="form" tabstate="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form wire:submit.prevent="UpdateData">
                 <div class="modal-content">
@@ -687,7 +706,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="pa">Permintaan Aktuan (a)</label>
-                            <input type="text" wire:model.defer="state.pa" class="form-control @error('pa') is-invalid @enderror" id="pa" aria-describedby="pa" placeholder="Enter Permintaan Aktuan (a)">
+                            <input type="text" wire:model.defer="edit.pa" class="form-control @error('pa') is-invalid @enderror" id="pa" aria-describedby="pa" placeholder="Enter Permintaan Aktuan (a)">
                             @error('pa')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -708,22 +727,26 @@
 </div>
 
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script>
     $(document).ready(function() {
-        window.addEventListener('show-chart', event => {
-            var index1 = <?= round(($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) / (abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) / 1), 2) ?>;
-            var index2 = <?= round((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7)) / 2), 2) ?>;
-            var index3 = <?= round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8)) / 3), 2) ?>;
-            var index4 = <?= round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9)) / 4), 2) ?>;
-            var index5 = <?= round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10)) / 5), 2) ?>;
-            var index6 = <?= round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10) + abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5 - $index_11)) / 6), 2) ?>;
-            var index7 = <?= round(((($index_6 - ($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5) + ($index_7 - ($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5)) + ($index_8 - ($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5) + ($index_9 - ($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5) + ($index_10 - ($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5) + ($index_11 - ($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5) + ($index_12 - ($index_7 + $index_8 + $index_9 + $index_10 + $index_11) / 5)) / ((abs(($index_1 + $index_2 + $index_3 + $index_4 + $index_5) / 5 - $index_6) + abs(($index_2 + $index_3 + $index_4 + $index_5 + $index_6) / 5 - $index_7) + abs(($index_3 + $index_4 + $index_5 + $index_6 + $index_7) / 5 - $index_8) + abs(($index_4 + $index_5 + $index_6 + $index_7 + $index_8) / 5 - $index_9) + abs(($index_5 + $index_6 + $index_7 + $index_8 + $index_9) / 5 - $index_10) + abs(($index_6 + $index_7 + $index_8 + $index_9 + $index_10) / 5 - $index_11) + abs(($index_7 + $index_8 + $index_9 + $index_10 + $index_11) / 5 - $index_12)) / 7), 2) ?>;
-            // console.log(index1);
-            var xValues = [1, 2, 3, 4, 5, 6, 7];
-            var yValues = [index1, index2, index3, index4, index5, index6, index7];
 
+        document.addEventListener('show-chart', (e) => {
+
+            // var dataParse = e.detail;
+            var data = e.detail;
+
+            var state1 =  Math.round((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) / (Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) / 1))
+            var state2 =  Math.round(((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6])) / 2))
+            var state3 =  Math.round((((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) + (data[7] - (data[2] + data[3] + data[4] + data[5] + data[6]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6]) + Math.abs((data[2] + data[3] + data[4] + data[5] + data[6]) / 5 - data[7])) / 3))
+            var state4 =  Math.round((((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) + (data[7] - (data[2] + data[3] + data[4] + data[5] + data[6]) / 5) + (data[8] - (data[3] + data[4] + data[5] + data[6] + data[7]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6]) + Math.abs((data[2] + data[3] + data[4] + data[5] + data[6]) / 5 - data[7]) + Math.abs((data[3] + data[4] + data[5] + data[6] + data[7]) / 5 - data[8])) / 4))
+            var state5 =  Math.round((((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) + (data[7] - (data[2] + data[3] + data[4] + data[5] + data[6]) / 5) + (data[8] - (data[3] + data[4] + data[5] + data[6] + data[7]) / 5) + (data[9] - (data[4] + data[5] + data[6] + data[7] + data[8]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6]) + Math.abs((data[2] + data[3] + data[4] + data[5] + data[6]) / 5 - data[7]) + Math.abs((data[3] + data[4] + data[5] + data[6] + data[7]) / 5 - data[8]) + Math.abs((data[4] + data[5] + data[6] + data[7] + data[8]) / 5 - data[9])) / 5) )
+            var state6 =  Math.round((((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) + (data[7] - (data[2] + data[3] + data[4] + data[5] + data[6]) / 5) + (data[8] - (data[3] + data[4] + data[5] + data[6] + data[7]) / 5) + (data[9] - (data[4] + data[5] + data[6] + data[7] + data[8]) / 5) + (data[10] - (data[5] + data[6] + data[7] + data[8] + data[9]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6]) + Math.abs((data[2] + data[3] + data[4] + data[5] + data[6]) / 5 - data[7]) + Math.abs((data[3] + data[4] + data[5] + data[6] + data[7]) / 5 - data[8]) + Math.abs((data[4] + data[5] + data[6] + data[7] + data[8]) / 5 - data[9]) + Math.abs((data[5] + data[6] + data[7] + data[8] + data[9]) / 5 - data[10])) / 6))
+            var state7 =  Math.round((((data[5] - (data[0] + data[1] + data[2] + data[3] + data[4]) / 5) + (data[6] - (data[1] + data[2] + data[3] + data[4] + data[5]) / 5)) + (data[7] - (data[2] + data[3] + data[4] + data[5] + data[6]) / 5) + (data[8] - (data[3] + data[4] + data[5] + data[6] + data[7]) / 5) + (data[9] - (data[4] + data[5] + data[6] + data[7] + data[8]) / 5) + (data[10] - (data[5] + data[6] + data[7] + data[8] + data[9]) / 5) + (data[11] - (data[6] + data[7] + data[8] + data[9] + data[10]) / 5)) / ((Math.abs((data[0] + data[1] + data[2] + data[3] + data[4]) / 5 - data[5]) + Math.abs((data[1] + data[2] + data[3] + data[4] + data[5]) / 5 - data[6]) + Math.abs((data[2] + data[3] + data[4] + data[5] + data[6]) / 5 - data[7]) + Math.abs((data[3] + data[4] + data[5] + data[6] + data[7]) / 5 - data[8]) + Math.abs((data[4] + data[5] + data[6] + data[7] + data[8]) / 5 - data[9]) + Math.abs((data[5] + data[6] + data[7] + data[8] + data[9]) / 5 - data[10]) + Math.abs((data[6] + data[7] + data[8] + data[9] + data[10]) / 5 - data[11])) / 7))
+            // console.log(state1);
+            var xValues = [1, 2, 3, 4, 5, 6, 7];
+            var yValues = [state1, state2, state3, state4, state5, state6, state7];
+            console.log(yValues);
             new Chart("myChart", {
                 type: "line",
                 data: {
@@ -742,7 +765,7 @@
                     maintainAspectRatio: true,
                 }
             });
-        })
+        });
     });
 </script>
 @endpush

@@ -2,7 +2,7 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <link rel="stylesheet" href="{{asset('backend')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
 
-@endpusha
+@endpush
 <div>
     <div class="content-header px-0">
         <div class="row mb-2">
@@ -51,7 +51,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                 </div>
-                                <x-datepicker wire:model.defer="state.date" id="appointmentDate" :error="'date'">
+                                <x-datepicker wire:model.defer="state.date" id="date" :error="'date'">
 
                                 </x-datepicker>
                                 @error('date')

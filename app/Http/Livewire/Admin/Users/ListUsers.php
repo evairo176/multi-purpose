@@ -24,7 +24,7 @@ class ListUsers extends AdminComponent
     public function changeRole(User $user, $role)
     {
         Validator::make(['role' => $role], [
-            'role' => 'required|in:admin,user',
+            'role' => 'required|in:admin,kader',
         ])->validate();
         $user->update(['role' => $role]);
         $this->dispatchBrowserEvent('alert', ['message' => "Role changed to {$role} successfully!"]);

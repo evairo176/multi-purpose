@@ -17,8 +17,3 @@
         <livewire:admin.dashboard.users-count />
     </div>
 </x-admin-layout>
-@extends('layouts.app')
-
-@section('content')
-
-@endsection

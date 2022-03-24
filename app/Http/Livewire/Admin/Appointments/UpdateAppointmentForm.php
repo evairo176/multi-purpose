@@ -14,6 +14,7 @@ class UpdateAppointmentForm extends Component
     public function mount($id)
     {
         $this->state = Appointments::where('id', $id)->first()->toArray();
+        // dd($this->state);
         $this->appointment = Appointments::where('id', $id)->first();
         // dd($this->state);
     }

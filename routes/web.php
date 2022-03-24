@@ -36,5 +36,3 @@ Route::get('/moving-average', MovingAverage::class);
 Route::get('/kecamatan', ListKecamatan::class)->name('kecamatan');
 Route::get('/desa', ListDesa::class)->name('desa');
 Route::get('/posyandu', ListPosyandu::class)->name('posyandu');
-Route::get('/posyandu/create', CreatePosyanduForm::class)->name('posyandu.create');
-Route::get('/posyandu/{id}/edit', UpdatePosyanduForm::class)->name('posyandu.edit');

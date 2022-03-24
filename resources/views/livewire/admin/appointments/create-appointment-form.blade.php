@@ -1,7 +1,9 @@
 @push('styles')
 <!-- Tempusdominus Bootstrap 4 -->
 <link rel="stylesheet" href="{{asset('backend')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-
+<!-- Select2 -->
+<link rel="stylesheet" href="{{asset('backend')}}/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="{{asset('backend')}}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 @endpush
 <div>
     <div class="content-header px-0">
@@ -40,6 +42,56 @@
                                 {{ $message }}
                             </div>
                             @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Multiple</font>
+                                </font>
+                            </label>
+                            <select class="select2bs4 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" data-select2-id="23" tabindex="-1" aria-hidden="true">
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Alabama</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Alaska</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">California</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Delaware</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Tennessee</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Texas</font>
+                                    </font>
+                                </option>
+                                <option>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Washington</font>
+                                    </font>
+                                </option>
+                            </select><span class="select2 select2-container select2-container--bootstrap4 select2-container--focus" dir="ltr" data-select2-id="24" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false">
+                                        <ul class="select2-selection__rendered">
+                                            <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="Select a State" style="width: 492.5px;"></li>
+                                        </ul>
+                                    </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                         </div>
                     </div>
                 </div>
@@ -124,6 +176,8 @@
 
 <!-- <script src="{{asset('backend')}}/plugins/flatpickr/custom-flatpickr.js"></script> -->
 <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+<!-- Select2 -->
+<script src="{{asset('backend')}}/plugins/select2/js/select2.full.min.js"></script>
 
 <script>
     $(document).ready(function() {

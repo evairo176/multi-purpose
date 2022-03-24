@@ -1,128 +1,217 @@
 @push('styles')
-
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 @endpush
 <div>
     <div class="content-header px-0">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Posyandu</h1>
+                <h1 class="m-0">Tambah Posyandu</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Posyandu</li>
+                    <li class="breadcrumb-item active">Tambah Posyandu</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div>
-    <div class="card card-primary card-outline">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="card card-primary card-outline">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5>Map Posyandu</h5>
                     </div>
                 </div>
                 <div class="card-body">
-                    <x-map-location />
+                    <div wire:ignore id='map' style='width: 100%; height: 500px;'></div>
                 </div>
             </div>
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <div class="d-flex justify-content-between align-items-center">
-                <x-search-input wire:model="search" />
-                <a href="{{ url('/posyandu/create') }}" class="btn btn-primary">Tambah Posyandu</a>
-            </div>
         </div>
-        <div class="card-body table-responsive p-0">
-            <table class="table table-hover ">
-                <thead>
-                    <tr>
-                        <th>
-                            <div>No</div>
-                        </th>
-                        <th>
-                            <div>Kecamatan</div>
-                        </th>
-                        <th>
-                            <div>Desa</div>
-                        </th>
-                        <th>
-                            <div>Nama Posyandu</div>
-                        </th>
-                        <th>
-                            <div>Aksi</div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody wire:loading.class="text-muted">
-                @forelse($posyandus as $posyandu)
-                    <tr>
-                        <td>{{($posyandus->currentPage() - 1) * $posyandus->perPage() + $loop->iteration}}</td>
-                        <td>{{$posyandu->name_kecamatan}}</td>
-                        <td>{{$posyandu->name_desa}}</td>
-                        <td>{{$posyandu->name_posyandu}}</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-eye"></i></button>
-                                <a href="{{route('posyandu.edit',$posyandu->id_posyandu)}}" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                <button wire:click.prevent="confirmationDeletePosyandu({{$posyandu->id_posyandu}})" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>
+                                @if($idEdit)
+                                Edit Posyandu
+                                @else
+                                Tambah Posyandu
+                                @endif
+                            </h5>
+                        </div>
+                        <div>
+                            <a wire:click="cancelForm" type="button" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <form wire:submit.prevent="{{$idEdit ? 'updatePosyandu' : 'createPosyandu'}}">
+                    @csrf
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="longtitude">Longtitude</label>
+                                    <input type="text" wire:model="longtitude" class="form-control @error('longtitude') is-invalid @enderror" aria-describedby="DesaHelp" placeholder="Masukan longtitude">
+                                    @error('longtitude')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    @empty
-                    <tr>
-                        <td colspan="5" class="text-center">
-                            <img src="{{asset('backend')}}/dist/img/noresult.png" alt="Product 1" style="max-width: 150px;" class="img-fluid">
-                            <br>
-                            No results found
-                        </td>
-                    </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-        <div class="card-footer">
-        <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    @if($sumPosyandu > $loadMore)
-                    <a href="javascript:void(0);" wire:click.prevent="addLoadMore" class="btn btn-secondary">
-                        Load More {{ $loadMore }}
-                    </a>
-                    @endif
-                </div>
-                <div>
-                    {{ $posyandus->links() }}
-                </div>
-            </div>
-        </div>
-    </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="lattitude">Lattitude</label>
+                                    <input type="text" wire:model="lattitude" class="form-control @error('lattitude') is-invalid @enderror" aria-describedby="DesaHelp" placeholder="Masukan lattitude">
+                                    @error('lattitude')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="client">Kecamatan</label>
+                                    <select class="form-control @error('id_kecamatan') is-invalid @enderror" id="id_kecamatan" wire:model.defer="id_kecamatan">
+                                        <option>Select kecamatan</option>
+                                        @foreach($kecamatans as $kecamatan)
+                                        <option value="{{$kecamatan->id}}">{{$kecamatan->name_kecamatan}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('id_kecamatan')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="client">Desa</label>
+                                    <select class="form-control @error('id_desa') is-invalid @enderror" id="id_desa" wire:model.defer="id_desa">
+                                        <option>Select desa</option>
+                                        @foreach($desas as $desa)
+                                        <option value="{{$desa->id}}">{{$desa->name_desa}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('id_desa')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="name_posyandu">Nama Posyandu</label>
+                                    <input type="text" wire:model="name_posyandu" class="form-control @error('name_posyandu') is-invalid @enderror" id="name_posyandu" aria-describedby="DesaHelp" placeholder="Masukan nama Desa">
+                                    @error('name_posyandu')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Modal -->
-    <div wire:ignore.self class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Delete User
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5>Are you sure you want to delete this user?</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" wire:click.prevent="delete" class="btn btn-primary">
-                        Delete Data
-                    </button>
-                </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control" c>
+                                @if($idEdit)
+                                Simpan Perubahan
+                                @else
+                                Simpan
+                                @endif
+                            </button>
+                </form>
+                @if($idEdit)
+                <button wire:click="deletePosyandu" type="button" class="btn mt-2 btn-danger form-control">Delete</button>
+                @endif
             </div>
         </div>
     </div>
 </div>
+</div>
+<div class="card card-primary card-outline">
+    <div class="card-header">
+        <div class="d-flex justify-content-between align-items-center">
+            <x-search-input wire:model="search" />
+        </div>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover ">
+            <thead>
+                <tr>
+                    <th>
+                        <div>No</div>
+                    </th>
+                    <th>
+                        <div>Kecamatan</div>
+                    </th>
+                    <th>
+                        <div>Desa</div>
+                    </th>
+                    <th>
+                        <div>Nama Posyandu</div>
+                    </th>
+                    <th>
+                        <div>Aksi</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody wire:loading.class="text-muted">
+                @forelse($posyandus as $posyandu)
+                <tr>
+                    <td>{{($posyandus->currentPage() - 1) * $posyandus->perPage() + $loop->iteration}}</td>
+                    <td>{{$posyandu->name_kecamatan}}</td>
+                    <td>{{$posyandu->name_desa}}</td>
+                    <td>{{$posyandu->name_posyandu}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button wire:click.prevent="edit({{$posyandu->id_posyandu}})" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <img src="{{asset('backend')}}/dist/img/noresult.png" alt="Product 1" style="max-width: 150px;" class="img-fluid">
+                        <br>
+                        No results found
+                    </td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                @if($sumPosyandu > $loadMore)
+                <a href="javascript:void(0);" wire:click.prevent="addLoadMore" class="btn btn-secondary">
+                    Load More {{ $loadMore }}
+                </a>
+                @endif
+            </div>
+            <div>
+                {{ $posyandus->links() }}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 @push('scripts')
 <!-- bs-custom-file-input -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+
 <script>
     document.addEventListener('livewire:load', () => {
         const defaultLocation = [108.31590389515185, -6.328942356993991];
@@ -148,7 +237,7 @@
                 } = properties;
 
                 let markerElement = document.createElement('div');
-                // console.log(markerElement);
+                // console.log(locationId);
                 markerElement.className = 'marker' + locationId;
                 markerElement.id = locationId;
                 markerElement.style.backgroundImage = 'url(https://cdn.icon-icons.com/icons2/2699/PNG/512/mapbox_logo_icon_169974.png)';
@@ -156,11 +245,16 @@
                 markerElement.style.width = '50px';
                 markerElement.style.height = '50px';
 
+                markerElement.addEventListener('click', function() {
+                    const locationId = $(this).attr('id');
+                    @this.findLocationById(locationId);
+                });
+
                 const content = '<div style="overflow-y:auto;max-height:400px;width:100%;">' +
                     '<table class="table table-sm mt-2">' +
                     '<tbody>' +
                     '<tr>' +
-                    '<td>Title</td>' +
+                    '<td>Nama Posyandu</td>' +
                     '<td>' + title + '</td>' +
                     '</tr>' +
                     '<tr>' +
@@ -189,11 +283,33 @@
         }
 
         // console.log(@this.geoJson);
-        loadLocation({!! $geoJson !!});
-        const style = "streets-v11";
-        // light-v10,streets-v11,outdoors-v11,dark-v10
+        loadLocation({!!$geoJson!!});
+
+        window.addEventListener('locationAdded', (e) => {
+            loadLocation(JSON.parse(e.detail));
+        });
+        window.addEventListener('updatedLocation', (e) => {
+            $('.mapboxgl-popup').remove();
+            $('div').remove('.mapboxgl-marker');
+            loadLocation(JSON.parse(e.detail));
+        });
+        window.addEventListener('locationDeleted', (e) => {
+            $('.mapboxgl-popup').remove();
+            $('.marker' + e.detail).remove();
+            loadLocation(JSON.parse(e.detail));
+        });
+        const style = 'streets-v11';
+        // light-v10,streets-v11,outdoors-v11,dark-v10,streets-v11
         map.setStyle("mapbox://styles/mapbox/" + style);
         map.addControl(new mapboxgl.NavigationControl());
+
+        map.on('click', (e) => {
+            const longtitude = e.lngLat.lng;
+            const lattitude = e.lngLat.lat;
+
+            @this.longtitude = longtitude;
+            @this.lattitude = lattitude;
+        });
     });
 </script>
 @endpush

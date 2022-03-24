@@ -13,7 +13,7 @@
                 <img src="{{ auth()->user()->avatar_url}}" id="profileImagex" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                <a href="#" class="d-block" x-ref="username" id="changedName">{{ auth()->user()->name }}</a>
             </div>
         </div>
 
@@ -87,6 +87,14 @@
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Desa
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{url('posyandu')}}" class="nav-link {{request()->is('posyandu') ? 'active' : ''}}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Posyandu
                         </p>
                     </a>
                 </li>

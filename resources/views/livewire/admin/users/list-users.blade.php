@@ -36,7 +36,7 @@
                             <div>Email</div>
                         </th>
                         <th>
-                            <div>Registerd Date</div>
+                            <div>Age</div>
                         </th>
                         <th>
                             <div>Role</div>
@@ -57,11 +57,11 @@
 
                         </td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->created_at->toFormattedDate()}}</td>
+                        <td>{{$user->umur}} Tahun</td>
                         <td>
                             <select wire:change="changeRole({{ $user  }},$event.target.value)" class="form-control">
                                 <option value="admin" {{ ($user->role == 'admin') ? 'selected' : ''}}>ADMIN</option>
-                                <option value="user" {{ ($user->role == 'user') ? 'selected' : ''}}>USER</option>
+                                <option value="kader" {{ ($user->role == 'kader') ? 'selected' : ''}}>KADER</option>
                             </select>
                         </td>
 
